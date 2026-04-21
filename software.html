@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software • Chaotic Sanctum Software</title>
+  <meta name="description" content="Browse software from Chaotic Sanctum Software, including Headache Log." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-a: #04050a;
+      --bg-b: #0b1020;
+      --panel: rgba(15, 18, 27, 0.88);
+      --border: rgba(130, 177, 255, 0.16);
+      --accent: #d7aa61;
+      --text: #edf3ff;
+      --muted: #9aa7c2;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
+      --radius: 22px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(215, 170, 97, 0.12), transparent 0 32%),
+        linear-gradient(180deg, var(--bg-b), var(--bg-a));
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(4, 5, 10, 0.55);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      filter: drop-shadow(0 0 16px rgba(215, 170, 97, 0.26));
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    nav a:hover,
+    .link:hover { color: var(--accent); }
+
+    main { padding: 32px 0 72px; }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero,
+    .product-card,
+    .coming,
+    .footer-card {
+      padding: 30px;
+    }
+
+    .hero {
+      margin-top: 18px;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(215, 170, 97, 0.12), transparent 0 26%),
+        var(--panel);
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.77rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+    }
+
+    .lead,
+    .muted,
+    .product-card p,
+    .coming p,
+    footer p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    section { margin-top: 28px; }
+
+    .product-card {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .badges,
+    .tags,
+    .downloads,
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .badge,
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.84rem;
+    }
+
+    .badge {
+      color: #f7e6c3;
+      background: rgba(215, 170, 97, 0.1);
+      border: 1px solid rgba(215, 170, 97, 0.2);
+    }
+
+    .tag {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .downloads a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      font-weight: 700;
+      min-width: 140px;
+      transition: 0.2s ease;
+    }
+
+    .downloads a.primary {
+      color: #15100a;
+      background: linear-gradient(135deg, #e6bf7a, var(--accent));
+      box-shadow: 0 10px 30px rgba(215, 170, 97, 0.24);
+    }
+
+    .downloads a.secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .downloads a:hover { transform: translateY(-1px); }
+
+    .product-side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .side-box {
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .side-box strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .side-box span {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .coming {
+      display: grid;
+      gap: 10px;
+      text-align: center;
+    }
+
+    .footer-card {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      margin-top: 28px;
+      padding-top: 22px;
+      padding-bottom: 22px;
+    }
+
+    .footer-links a,
+    .link { color: var(--muted); }
+    .footer-links a:hover,
+    .link:hover { color: var(--accent); }
+
+    @media (max-width: 920px) {
+      .product-card { grid-template-columns: 1fr; }
+      .hero,
+      .product-card,
+      .coming,
+      .footer-card { padding: 24px; }
+      .nav,
+      .footer-card { flex-direction: column; align-items: start; }
+    }
+
+    @media (max-width: 640px) {
+      .shell { width: min(calc(100% - 20px), var(--max)); }
+      main { padding-top: 18px; }
+      h1 { font-size: 2.3rem; }
+      .downloads { flex-direction: column; }
+      .downloads a { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell nav">
+      <a class="brand" href="./index.html">
+        <img src="./assets/chaotic-sanctum-logo.png" alt="Chaotic Sanctum Software logo" />
+        <span>Chaotic Sanctum Software</span>
+      </a>
+      <nav>
+        <a href="./index.html">Home</a>
+        <a href="./software.html">Software</a>
+        <a href="./index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero panel">
+      <div class="eyebrow">Our software</div>
+      <h1>Purpose-built tools for people who want less noise.</h1>
+      <p class="lead">We are starting with health tracking, but the throughline is the same everywhere: software should help you notice what matters, stay out of your way, and keep working when life is messy.</p>
+    </section>
+
+    <section>
+      <article class="product-card panel">
+        <div class="stack">
+          <div class="badges">
+            <span class="badge">Android v1.1</span>
+            <span class="badge">Desktop v1.0</span>
+          </div>
+          <div>
+            <h2>Headache Log</h2>
+            <p>An offline-first headache and migraine tracker built to make consistency easier. Headache Log lets you quickly capture when a headache starts, how severe it feels, likely triggers, treatments you tried, and how recovery unfolded, so you can spot patterns without fighting the app itself.</p>
+          </div>
+          <div class="tags">
+            <span class="tag">Offline-first</span>
+            <span class="tag">Private by default</span>
+            <span class="tag">Simple entry flow</span>
+            <span class="tag">Pattern tracking</span>
+            <span class="tag">Cross-platform</span>
+          </div>
+          <div class="downloads">
+            <a class="primary" href="mailto:patticus@proton.me?subject=Headache%20Log%20Android%20Release">Android release</a>
+            <a class="secondary" href="https://drive.google.com/drive/folders/1IZVYEuPulusgoAhgsgPEz8VQZiNtxfSo">Windows download</a>
+            <a class="secondary" href="./headache.html">Web version</a>
+          </div>
+        </div>
+        <div class="product-side">
+          <div class="side-box">
+            <strong>Why it exists</strong>
+            <span>Health tracking is only useful if it is easy enough to keep using on a bad day. Headache Log is designed around low-friction logging, not dashboards for their own sake.</span>
+          </div>
+          <div class="side-box">
+            <strong>Best fit</strong>
+            <span>People managing migraines, recurring headaches, and trigger discovery who want something practical, local-first, and not overly clinical.</span>
+          </div>
+          <div class="side-box">
+            <strong>Need access?</strong>
+            <span>Email <a class="link" href="mailto:patticus@proton.me">patticus@proton.me</a> for Android release notes or questions about availability.</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section>
+      <div class="coming panel">
+        <div class="eyebrow">More coming</div>
+        <h2>Chaotic Sanctum is just getting started.</h2>
+        <p>Future products are on the way. We are taking the slow route on purpose: release fewer things, make them honest, and keep them useful.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-card panel">
+        <p>© 2026 Chaotic Sanctum Software. Built for chaoticsanctum.tech.</p>
+        <div class="footer-links">
+          <a href="https://chaoticsanctum.tech">chaoticsanctum.tech</a>
+          <a href="https://github.com/IamPatticus/chaoticsanctum">GitHub</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
