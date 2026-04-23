@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy • Chaotic Sanctum Software</title>
+  <meta name="description" content="Privacy policy for Chaotic Sanctum Software and Headache Log." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-a: #04050a;
+      --bg-b: #0b1020;
+      --panel: rgba(15, 18, 27, 0.88);
+      --border: rgba(130, 177, 255, 0.16);
+      --accent: #d7aa61;
+      --text: #edf3ff;
+      --muted: #9aa7c2;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
+      --radius: 22px;
+      --max: 960px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(215, 170, 97, 0.12), transparent 0 32%),
+        linear-gradient(180deg, var(--bg-b), var(--bg-a));
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(4, 5, 10, 0.55);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      filter: drop-shadow(0 0 16px rgba(215, 170, 97, 0.26));
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a,
+    .link { color: var(--muted); font-weight: 500; }
+    nav a:hover,
+    .link:hover { color: var(--accent); }
+
+    main { padding: 32px 0 72px; }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.77rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    h1, h2, p, li { margin: 0; }
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 30px 0 10px;
+    }
+
+    p, li {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    strong { color: var(--text); }
+    ul { padding-left: 1.2rem; margin: 0; }
+    .hero { margin-top: 18px; }
+    .meta { margin-top: 10px; color: var(--muted); }
+    .footer-card {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      margin-top: 28px;
+      padding: 22px 30px;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 720px) {
+      .shell { width: min(calc(100% - 20px), var(--max)); }
+      .nav, .footer-card { flex-direction: column; align-items: start; }
+      .panel, .footer-card { padding: 24px; }
+      main { padding-top: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell nav">
+      <a class="brand" href="./index.html">
+        <img src="./assets/chaotic-sanctum-logo.png" alt="Chaotic Sanctum Software logo" />
+        <span>Chaotic Sanctum Software</span>
+      </a>
+      <nav>
+        <a href="./index.html">Home</a>
+        <a href="./software.html">Software</a>
+        <a href="./privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="panel hero">
+      <div class="eyebrow">Privacy policy</div>
+      <h1>We prefer restraint to surveillance.</h1>
+      <p>This privacy policy explains how Chaotic Sanctum Software and the Headache Log app handle information.</p>
+      <p class="meta"><strong>Effective date:</strong> April 23, 2026</p>
+    </section>
+
+    <section class="panel">
+      <h2>What Headache Log stores</h2>
+      <p>Headache Log stores the information you choose to enter into the app, including headache start and end times, pain level, headache type, and notes.</p>
+
+      <h2>How your data is used</h2>
+      <p>Your data is used only to provide the app’s core tracking features, such as viewing your history and importing or exporting your information when you choose to do so.</p>
+
+      <h2>Where data is stored</h2>
+      <p>Headache Log is designed as an offline-first app. Your headache data is stored locally on your device.</p>
+      <p>The app does not require an account to use its core features.</p>
+
+      <h2>Sharing</h2>
+      <p>Chaotic Sanctum Software does not sell your personal data.</p>
+      <p>Headache Log does not share your headache data with third parties unless you explicitly choose to export or share that data yourself.</p>
+
+      <h2>Advertising and tracking</h2>
+      <p>Headache Log does not use in-app advertising SDKs and is not designed to track you across apps or websites for advertising purposes.</p>
+
+      <h2>Permissions</h2>
+      <p>If the app asks for file or storage access, it is only for app-related actions you choose, such as importing or exporting CSV files.</p>
+
+      <h2>Security</h2>
+      <p>Because your data is stored locally, your privacy and security also depend on your device’s own protections, backups, and access controls.</p>
+
+      <h2>Children’s privacy</h2>
+      <p>Headache Log is not directed to children under 13 and is not intended to knowingly collect personal information from children.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>This policy may be updated from time to time. If it changes, the updated version will be posted on this page with a revised effective date.</p>
+
+      <h2>Contact</h2>
+      <p>If you have questions about this privacy policy, contact <a class="link" href="mailto:support@chaoticsanctum.tech">support@chaoticsanctum.tech</a>.</p>
+    </section>
+
+    <footer>
+      <div class="footer-card panel">
+        <p>© 2026 Chaotic Sanctum Software. Built for chaoticsanctum.tech.</p>
+        <div class="footer-links">
+          <a href="./index.html">Home</a>
+          <a href="./software.html">Software</a>
+          <a href="./privacy.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
