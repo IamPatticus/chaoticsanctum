@@ -279,6 +279,33 @@
       .downloads { flex-direction: column; }
       .downloads a { width: 100%; }
     }
+    .waitlist-form {
+      margin-top: 18px;
+      padding: 16px;
+      border: 1px solid rgba(215, 170, 97, 0.2);
+      border-radius: 12px;
+      background: rgba(215, 170, 97, 0.04);
+    }
+    .waitlist-label {
+      font-size: 0.82rem;
+      color: rgba(215, 170, 97, 0.8);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .waitlist-form form { display: flex; gap: 8px; flex-wrap: wrap; }
+    .waitlist-form input[type="email"] {
+      flex: 1; min-width: 160px; padding: 10px 14px; border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06);
+      color: var(--text); font-size: 0.9rem; outline: none;
+    }
+    .waitlist-form input[type="email"]:focus { border-color: rgba(215,170,97,0.5); }
+    .waitlist-form button {
+      padding: 10px 18px; border-radius: 8px; border: none;
+      background: linear-gradient(135deg, #e6bf7a, var(--accent));
+      color: #15100a; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: 0.2s ease;
+    }
+    .waitlist-form button:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(215,170,97,0.3); }
+
   </style>
 </head>
 <body>
@@ -323,10 +350,16 @@
             <span class="tag">Cross-platform</span>
           </div>
           <div class="downloads">
-            <a class="primary" href="https://play.google.com/apps/testing/com.chaoticsanctum.app">Android app sign up</a>
             <a class="secondary" href="https://play.google.com/store/apps/details?id=com.chaoticsanctum.app">View on Google Play</a>
             <a class="secondary" href="https://drive.google.com/drive/folders/1ZW3PjENoany-HKJOOc_j0JScrkPfcta4">Windows download</a>
             <a class="secondary" href="./privacy.html">Privacy policy</a>
+          </div>
+          <div class="waitlist-form">
+            <p class="waitlist-label">Headache Log is in closed testing. Join the waitlist to get early access:</p>
+            <form action="https://formspree.io/f/myklooqa" method="POST">
+              <input type="email" name="email" placeholder="your@email.com" required />
+              <button type="submit">Join the Waitlist</button>
+            </form>
           </div>
         </div>
         <div class="product-side">
@@ -340,7 +373,7 @@
           </div>
           <div class="side-box">
             <strong>Android access</strong>
-            <span>Use <a class="link" href="https://play.google.com/apps/testing/com.chaoticsanctum.app">Android app sign up</a> for the tester build, or view the listing on <a class="link" href="https://play.google.com/store/apps/details?id=com.chaoticsanctum.app">Google Play</a>.</span>
+            <span>Headache Log is in closed testing. <a class="link" href="https://play.google.com/store/apps/details?id=com.chaoticsanctum.app">View on Google Play</a> for the full listing, or join the waitlist to get early access.</span>
           </div>
         </div>
       </article>

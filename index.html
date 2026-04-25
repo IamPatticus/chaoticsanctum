@@ -318,6 +318,33 @@
       .actions { flex-direction: column; align-items: stretch; }
       .button, .button-secondary { justify-content: center; }
     }
+    .waitlist-form {
+      margin-top: 18px;
+      padding: 16px;
+      border: 1px solid rgba(215, 170, 97, 0.2);
+      border-radius: 12px;
+      background: rgba(215, 170, 97, 0.04);
+    }
+    .waitlist-label {
+      font-size: 0.82rem;
+      color: rgba(215, 170, 97, 0.8);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .waitlist-form form { display: flex; gap: 8px; flex-wrap: wrap; }
+    .waitlist-form input[type="email"] {
+      flex: 1; min-width: 160px; padding: 10px 14px; border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06);
+      color: var(--text); font-size: 0.9rem; outline: none;
+    }
+    .waitlist-form input[type="email"]:focus { border-color: rgba(215,170,97,0.5); }
+    .waitlist-form button {
+      padding: 10px 18px; border-radius: 8px; border: none;
+      background: linear-gradient(135deg, #e6bf7a, var(--accent));
+      color: #15100a; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: 0.2s ease;
+    }
+    .waitlist-form button:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(215,170,97,0.3); }
+
   </style>
 </head>
 <body>
@@ -397,9 +424,15 @@
             <h3>Headache Log</h3>
             <p>An offline-first headache and migraine tracker for noticing patterns without turning your life into a spreadsheet. It helps you record symptoms, severity, triggers, and recovery in a way that stays quick enough to actually use.</p>
           </div>
-          <a class="link" href="https://play.google.com/apps/testing/com.chaoticsanctum.app">Android app sign up →</a><br />
           <a class="link" href="https://play.google.com/store/apps/details?id=com.chaoticsanctum.app">View on Google Play →</a><br />
           <a class="link" href="./privacy.html">View privacy policy →</a>
+          <div class="waitlist-form">
+            <p class="waitlist-label">Headache Log is in closed testing. Join the waitlist to get early access:</p>
+            <form action="https://formspree.io/f/myklooqa" method="POST">
+              <input type="email" name="email" placeholder="your@email.com" required />
+              <button type="submit">Join the Waitlist</button>
+            </form>
+          </div>
         </article>
         <aside class="contact-card panel" id="contact">
           <div class="eyebrow">Get in touch</div>
